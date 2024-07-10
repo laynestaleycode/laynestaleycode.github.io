@@ -52,6 +52,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (result.codeResult && result.codeResult.code) {
                 document.getElementById('scanned-barcode').value = result.codeResult.code;
                 sendBarcodeToBackend(result.codeResult.code);
+                Quagga.stop();
             }
         }
     });
