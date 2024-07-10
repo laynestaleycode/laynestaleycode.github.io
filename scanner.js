@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
             halfSample: true
         },
         decoder : {
-            readers : ["code_128_reader"] // List of barcode formats to decode
+            readers : ["code_39_reader"] // List of barcode formats to decode
         },
         locate: true // try to locate the barcode in the image
     };
