@@ -1,6 +1,5 @@
 <?php
 // Include the database connection script
-require 'quagga.js';
 include 'db_connect.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -14,6 +13,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // Execute the statement
         if ($stmt->execute()) {
             echo "Scanned Barcode: " . $barcode;
+
+            // Check the barcode value and redirect if it matches
+            if ($barcode === '21076138' || $barcode === 'B2000066') {
+                header('Location: success.html');
+                exit();
+            }
         } else {
             echo "Error: " . $stmt->error;
         }
